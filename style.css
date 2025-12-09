@@ -1,0 +1,945 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+section{
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+/*NAV*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #163333;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.3%;
+}
+
+nav ul {
+  background-color: #1e4444d7;
+  backdrop-filter: blur(3px);
+  height: 60px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  border-radius: 25px;
+  padding: 0 10px;
+  transition: 0.3s;
+}
+
+/* Ikonok normál állapotban */
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #ffff;
+  transition: 0.4s ease;
+}
+
+/* Hover effekt – Kiemelkedik, nő, kör alakú háttér */
+nav ul li:hover a {
+  background-color: #1e4444;
+  border: solid 2px #37adac;
+  transform: translateY(-20px) scale(1.25);
+  color: #37adac !important;
+  border-radius: 50%;
+}
+
+
+
+@media (max-width: 768px) {
+  nav ul {
+    width: 70%;
+    height: 55px;
+  }
+
+  nav ul li a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    width: 90%;
+    height: 55px;
+  }
+
+  nav ul li a {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+
+/*NAV*/
+
+
+
+
+
+/*Home*/
+
+.home{
+
+    background-image: url(pic/Névtelen\ terv.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Science Gothic", sans-serif;
+    display: flex;
+}
+
+.homediv{
+
+    height: 100vh;
+    width: 60%;
+    color: rgb(220, 220, 220);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+
+    
+}
+
+.homediv h1{
+
+    font-size: 40px !important;
+    line-height: 65px;
+}
+
+
+.homediv a{
+
+    text-decoration: none;
+    color:rgb(220, 220, 220) ;
+    background-color: #1e4444;
+    width: 215px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    transition: ease 0.3s;
+}
+
+.homediv a:hover{
+
+    background: none;
+    border: 3px solid #1e4444;
+    transform:  scale(1.1);
+}
+
+.homediv a svg{
+
+    margin-left: 15px;
+}
+
+
+.logo{
+
+    width: 35%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo img{
+
+    width: 600px;
+
+}
+
+@media (max-width: 1180px){
+
+  .home{
+
+    flex-direction: column;
+    background-image: url(pic/telohatt.png);
+    background-position: center;
+  }
+
+  .homediv h1{
+
+    font-size: 30px !important;
+  }
+
+  .homediv{
+
+    width: 100%;
+    text-align: center;
+    justify-content: end;
+    align-items: center;
+    height: 70vh;
+    padding: 10px;
+  }
+
+  .logo{
+
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+.logo img{
+
+    width: 300px;
+
+  }
+
+
+}
+
+/*Home*/
+
+
+/*Services*/
+
+.services{
+
+    width: 100%;
+    min-height: 70vh;
+    padding: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-color: #163333;
+    color:rgb(220, 220, 220);
+}
+
+.services h2{
+
+    margin-bottom: 5%;
+    font-family: "Science Gothic", sans-serif;
+}
+
+
+.cards{
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    background-color: #1e4444;
+    color: rgb(220, 220, 220);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #37adac;
+    position: relative;
+    transition: transform 0.5s ease, background-color 0.5s ease, border 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card svg{
+
+  position: relative;
+  top: 0;
+}
+
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: -200px;
+    width: 120%;
+    height: 18px;
+    background-color: #ffffff;
+    transform: rotate(50deg);
+    filter: blur(30px);
+    opacity: 0.45;
+    transition: top 1s ease, width 1s ease;
+}
+
+
+.card:hover {
+    transform: scale(1.1);
+    border: 3px solid #37adac;
+    background-color: #163333;
+}
+
+.card:hover::after {
+    width: 225%;
+    top: -100%;
+}
+
+
+
+.card h3{
+
+  font-family: "Science Gothic", sans-serif;
+  margin-bottom: 5%;
+
+}
+
+
+
+
+
+
+/*Services*/
+
+
+
+
+
+/*About*/
+
+
+  .about{
+
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+  }
+
+
+  .aboutpic{
+
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content:start;
+    align-items: start;
+  }
+
+  .aboutpic img{
+
+    width: 95%;
+  }
+
+
+  .abouttext{
+
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color:  rgb(220, 220, 220);
+    align-items: start;
+    text-align: justify;
+    padding-top: 10%;
+  }
+
+  .abouttext h2{
+
+    font-family: "Science Gothic", sans-serif;
+  }
+
+  .abouttext p{
+
+    width: 80%;
+    text-align: justify;
+  }
+
+  .boxes{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .box{
+
+    text-align: left !important;
+    background-color: #1e4444b3;
+    padding: 1%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #37adac;
+    border-radius: 5px;
+    transition: transform 0.5s ease, background-color 0.5s ease, border 0.5s ease;
+    
+  }
+
+  .box:hover {
+    transform: scale(1.1);
+    border: 3px solid #37adac;
+    background-color: #163333;
+}
+  
+
+  .box p{
+
+    font-size: 12px;
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  .box h4{
+
+    font-size: 20px;
+    font-family: "Science Gothic", sans-serif;
+  }
+
+  @media (max-width: 1180px){
+
+    .about{
+
+      flex-direction: column;
+    }
+
+    .aboutpic{
+
+      width: 100%;
+      height: 35vh;
+      justify-content: center;
+    }
+
+    .aboutpic img{
+
+      width: 30%;
+    }
+
+    .abouttext{
+
+      width: 100%;
+      align-items: center;
+      
+    }
+
+    .abouttext p{
+
+      text-align: justify;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 90%;
+    }
+
+    .boxes{
+
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+
+    }
+
+    .box{
+
+      width: 70%;
+    }
+  }
+
+
+  @media (max-width: 830px){
+
+    .aboutpic{
+
+      width: 100%;
+      height: 35vh;
+      justify-content: center;
+    }
+
+    .aboutpic img{
+
+      width: 50%;
+    }
+
+  }
+
+    @media (max-width: 600px){
+
+    .aboutpic{
+
+      width: 100%;
+      height: 35vh;
+      justify-content: center;
+    }
+
+    .aboutpic img{
+
+      width: 80%;
+    }
+
+  }
+
+/*About*/
+
+
+/*Gallery*/
+
+.gallery {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #163333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery h2{
+
+  position: absolute;
+  top: 12%;
+  font-family: "Science Gothic", sans-serif;
+  color:  rgb(220, 220, 220);
+
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  animation: slide 18s linear infinite;
+}
+
+.gallery-item {
+  min-width: 450px;
+  height: 300px;
+  border-radius: 8px;
+  border: 2px solid #37adac;
+  overflow: hidden;
+  background-color: #1e4444;
+  transition: 0.5s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  border: 3px solid #37adac;
+  background-color: #163333;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+    @media (max-width: 700px){
+
+      .gallery-item{
+
+        min-width:250px;
+      }
+      
+    }
+
+/*Gallery*/
+/*Contact*/
+
+.contact{
+
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact h2{
+
+  position: absolute;
+  top: 12%;
+  font-family: "Science Gothic", sans-serif;
+  color:  rgb(220, 220, 220);
+
+}
+
+.contactsdata{
+
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.contactborder{
+
+  width: 70%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #37adac;
+  border-radius: 5px;
+}
+
+.contacts{
+
+  text-align: center;
+  color: rgb(220, 220, 220);
+  font-family: "Science Gothic", sans-serif;
+}
+
+.contacts h3{
+
+  margin-bottom: 5%;
+}
+
+.atag {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(220,220,220);
+  transition: transform 0.3s ease;
+  margin-bottom: 2%;
+  font-size: 18px;
+}
+
+.atag:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+.webcontact{
+
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.webcontact input{
+
+  margin-bottom: 2%;
+  width: 100%;
+  height: 30px;
+  padding: 2%;
+  background-color: #1e4444;
+  border: 2px solid #37adac;
+  border-radius: 5px;
+  color: rgb(220,220,220);
+  transition: transform 0.3s ease;
+}
+
+.webcontact input:hover {
+  transform: scale(1.1);
+}
+
+
+.webcontact textarea:hover {
+  transform: scale(1.1);
+}
+
+
+.webcontact textarea{
+
+  margin-bottom: 2%;
+  width: 100%;
+  height: 100px;
+  padding: 2%;
+  background-color: #1e4444;
+  border: 2px solid #37adac;
+  border-radius: 5px;
+  color: rgb(220,220,220);
+  resize: none;
+  transition: transform 0.3s ease;
+}
+
+input::placeholder {
+  color: rgb(220,220,220);
+  opacity: 0.9;
+}
+
+textarea::placeholder {
+  color: rgb(220,220,220);
+  opacity: 0.9;
+}
+
+.webcontact button{
+
+    text-decoration: none;
+    color:rgb(220, 220, 220) ;
+    background-color: #1e4444;
+    border: 2px solid #37adac;
+    width: 150px;
+    padding: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.webcontact button:hover{
+
+    background: none;
+    border: 3px solid #1e4444;
+    transform:  scale(1.1);
+}
+
+
+
+.address{
+
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.address iframe{
+
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ----- Mobil | Tablet | max 900px ----- */
+@media (max-width: 900px) {
+
+  .contact {
+    flex-direction: column;
+    min-height: auto;
+    padding-top: 100px; /* hogy a H2 felül jól férjen */
+  }
+
+  .contact h2 {
+    position: static;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .contactsdata,
+  .address {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .contactborder {
+    width: 90%;
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .webcontact {
+    width: 90%;
+  }
+
+  .address iframe {
+    width: 100%;
+    height: 350px;
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+/* ----- Nagyon kicsi mobil | max 480px ----- */
+@media (max-width: 480px) {
+
+  .webcontact input,
+  .webcontact textarea {
+    transform: none !important; /* ne zoomoljon túl mobilon */
+  }
+
+  .webcontact input:hover,
+  .webcontact textarea:hover {
+    transform: none;
+  }
+
+  .atag {
+    font-size: 16px;
+  }
+
+  .contacts h3 {
+    font-size: 20px;
+  }
+
+  .contactborder {
+    padding: 20px 0;
+  }
+}
+
+
+
+/*Contact*/
+/*Footer*/
+
+footer{
+
+  width: 100%;
+  color:rgb(167, 167, 167) ;
+  text-align: center;
+}
+
+/*Footer*/
+
+
+/*Koszono*/
+
+.thankyou{
+
+  color: rgb(220, 220, 220);
+  font-family: "Science Gothic", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.thankyou a{
+
+    text-decoration: none;
+    color:rgb(220, 220, 220) ;
+    background-color: #1e4444;
+    width: 215px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    transition: ease 0.3s;
+}
+
+.thankyou a:hover{
+
+    background: none;
+    border: 3px solid #1e4444;
+    transform:  scale(1.1);
+}
+
+/*Koszono*/
+
+/* COOKIE BANNER */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e4444;
+  color: rgb(220,220,220);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 20px;
+  font-family: "Science Gothic", sans-serif;
+  z-index: 9999;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.5);
+}
+
+.cookie-banner p {
+  margin: 0;
+  flex: 1 1 100%;
+  font-size: 14px;
+  text-align: left;
+}
+
+.cookie-banner a {
+  color: #37adac;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 100%;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.cookie-buttons button {
+  background-color: #163333;
+  border: 2px solid #37adac;
+  color: rgb(220,220,220);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  font-family: "Science Gothic", sans-serif;
+}
+
+.cookie-buttons button:hover {
+  transform: scale(1.1);
+  background: none;
+  border: 3px solid #37adac;
+}
+
+/* ----- Mobil nézet | max 600px ----- */
+@media(max-width: 600px) {
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .cookie-banner p {
+    flex: 1 1 100%;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .cookie-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cookie-buttons button {
+    width: 80%;
+  }
+}
