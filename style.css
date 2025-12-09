@@ -207,7 +207,7 @@ nav ul li:hover a {
     align-items: center;
     height: 70vh;
     padding: 10px;
-    padding-top: 20px !important;
+    margin-top: 20px;
   }
 
   .logo{
